@@ -32,34 +32,34 @@ export type TaskTheme = {
   radius: string
 }
 
-const YELP_FONT = "'Inter', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif"
+const PLATFORM_FONT = "'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif"
 
-// Shared Yelp palette — every task inherits this; only kicker/note differ.
+// Professional platform palette — clean white surfaces, blue accent, light gray backgrounds.
 const base = {
   dark: false,
-  fontDisplay: YELP_FONT,
-  fontBody: YELP_FONT,
-  bg: '#ffffff',
+  fontDisplay: PLATFORM_FONT,
+  fontBody: PLATFORM_FONT,
+  bg: '#f4f5f7',
   surface: '#ffffff',
-  raised: '#f7f7f7',
-  text: '#1a1a1a',
-  muted: '#6b6b6b',
-  line: '#e6e6e6',
-  accent: '#d32323',
-  accentSoft: '#fdecec',
+  raised: '#f9fafb',
+  text: '#111827',
+  muted: '#6b7280',
+  line: '#e2e5ea',
+  accent: '#1d6fe8',
+  accentSoft: '#eff6ff',
   onAccent: '#ffffff',
-  glow: 'rgba(211,35,35,0.06)',
+  glow: 'rgba(29,111,232,0.06)',
   radius: '0.75rem',
 } satisfies Omit<TaskTheme, 'kicker' | 'note'>
 
 export const taskThemes: Record<TaskKey, TaskTheme> = {
-  article: { ...base, kicker: 'Articles', note: 'In-depth reads, guides and stories worth your time.' },
-  listing: { ...base, kicker: 'Businesses', note: 'Find, compare and connect with local businesses.' },
-  classified: { ...base, kicker: 'Marketplace', note: 'Fresh offers and listings, ready to act on.' },
-  image: { ...base, kicker: 'Photos', note: 'A visual feed of standout images and galleries.' },
-  sbm: { ...base, kicker: 'Bookmarks', note: 'Curated resources and links worth saving.' },
-  pdf: { ...base, kicker: 'Documents', note: 'Downloadable guides, reports and references.' },
-  profile: { ...base, kicker: 'People', note: 'Discover creators, businesses and profiles.' },
+  article: { ...base, kicker: 'Articles', note: 'In-depth reads, professional insights, and business guides from across Southeast Asia.' },
+  listing: { ...base, kicker: 'Businesses', note: 'Find, compare and connect with companies and service providers.' },
+  classified: { ...base, kicker: 'Marketplace', note: 'Fresh opportunities and classified listings ready to act on.' },
+  image: { ...base, kicker: 'Visuals', note: 'A visual gallery of standout images and creative content.' },
+  sbm: { ...base, kicker: 'Bookmarks', note: 'Curated resources and professional links worth saving.' },
+  pdf: { ...base, kicker: 'Documents', note: 'Downloadable guides, reports, and professional references.' },
+  profile: { ...base, kicker: 'Professionals', note: 'Discover expert profiles and connect with industry leaders.' },
 }
 
 export function getTaskTheme(task: TaskKey): TaskTheme {
